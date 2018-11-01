@@ -17,6 +17,9 @@ function init() {
 	
 	// Initialize Mario Object
 	// TODO: Put Mario on the ground instead of the cloud
+
+
+
 	Mario = {
 		x: 100,
 		y: 280,
@@ -35,7 +38,12 @@ function init() {
 	bgImage.src = "marioBG.jpg";
 	draw();
 
+    ctx.drawImage(Mario.x, Mario.y, Mario.w, Mario.h);
+
+
 	// TODO: (OPTIONAL) set mario_08.wav as background music
+
+
 
 }
 
@@ -50,19 +58,18 @@ function draw() {
 	// loaded, you must do it this way
 	bgImage.onload = function(){
 		ctx.drawImage(bgImage, 0, 0);
-
-    }
+    };
 
 	/*
 	 * TODO: Draw Mario's initial image
 	 */
-
+	
 
 	/////////////////////////////////////////////////////////////////
 	var render = function () {
 		ctx.drawImage(bgImage, 0, 0); 
 		renderMario();
-	}
+	};
 
 	/*
 	 * TODO: Alter the y coordinates so Mario will jump while on the ground
