@@ -64,14 +64,11 @@ function draw() {
     bgImage.onload = function(){
         ctx.drawImage(bgImage, 0, 0);
 
-    }
+    };
 
     /*
      * TODO: Draw Mario's initial image
      */
-
-
-
 
 
 
@@ -89,7 +86,7 @@ function draw() {
             Mario.Image.src = "mario2.png";
             ctx.drawImage(Mario.Image, Mario.x, Mario.y, Mario.w, Mario.h);
             // Change the y value each time
-            Mario.y -= 5; // move 5 px up
+            Mario.y -= 10; // move 5 px up
         }else if(Mario.y <= 200 && Mario.moving == "up"){
             Mario.moving = "down";
         } else if(Mario.y < 280 && Mario.moving == "down"){
@@ -118,6 +115,15 @@ function draw() {
      * TODO: Stop Mario if he runs out of room
      *
      */
+    
+   function moveRight(){
+       var elem = document.getElementById("mario_canvas");
+       e = event || document.body.onkeydown = function (e) {
+           if(keycode === 38 && Mario.moving == "yes");
+           Mario.Image.src = "marioturnsright.png"
+
+   }
+
     document.body.onkeydown = function(e) {  // listen for a key
 
         e = event || window.event;             // any kind of event
