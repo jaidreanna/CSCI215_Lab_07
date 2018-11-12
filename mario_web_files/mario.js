@@ -76,7 +76,7 @@ function draw() {
     var render = function () {
         ctx.drawImage(bgImage, 0, 0);
         renderMario();
-    }
+    };
 
     /*
      * TODO: Alter the y coordinates so Mario will jump while on the ground
@@ -115,14 +115,7 @@ function draw() {
      * TODO: Stop Mario if he runs out of room
      *
      */
-    
-   function moveRight(){
-       var elem = document.getElementById("mario_canvas");
-       e = event || document.body.onkeydown = function (e) {
-           if(keycode === 38 && Mario.moving == "yes");
-           Mario.Image.src = "marioturnsright.png"
 
-   }
 
     document.body.onkeydown = function(e) {  // listen for a key
 
@@ -136,15 +129,21 @@ function draw() {
 
 
 
-    }
+    };
 
     /* TODO:
      * TODO: Capture keycodes for L and R. In each, set a timeout that calls a function
      * TODO: to face Mario forward after 200 ms. HINT: setTimeout(function, timeInMilliSecs)
      */
-    document.body.onkeyup = function(e) {  // listen for a key
+    var objImage = null;
+    function init (){
+        objImage=document.getElementById("marioturnsleft.png");
+        objImage.style.position='relative';
+        objImage.style.left='0px';
+        objImage.style.top='0px';
+    };
 
-    }
+
 
 
     /*
